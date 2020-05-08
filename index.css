@@ -40,13 +40,23 @@ button {
   font-size: 4rem;
   grid-column-start: 1;
   grid-column-end: 4;
+  margin: 8px;
+}
+.active-time-remaining {
+  font-size: 1.5rem;
 }
 .remain {
+  display: flex;
+  flex-direction: column;
   font-size: 3rem;
   text-align: right;
   grid-column-start: 1;
   grid-row-start: 2;
   grid-row-end: 4;
+}
+.remain > span:last-child {
+  background-color: red;
+  height: 100%;
 }
 .time {
   display: flex;
@@ -127,6 +137,7 @@ button {
   flex-direction: row;
   grid-template-columns: repeat(4, 1fr);
   column-gap: 8px;
+  background-color: transparent;
 }
 .control button {
   display: grid;
