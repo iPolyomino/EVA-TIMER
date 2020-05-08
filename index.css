@@ -88,6 +88,7 @@ button {
   grid-template-rows: 2fr 1fr;
   grid-template-columns: 2fr 1fr;
   grid-auto-flow: column;
+  column-gap: 8px;
 }
 .power-system span:nth-child(1) {
   font-size: 6rem;
@@ -98,6 +99,14 @@ button {
 .power-system span:nth-child(3) {
   grid-row-start: 1;
   grid-row-end: 3;
+  background: repeating-linear-gradient(
+    -45deg,
+    red,
+    red 20px,
+    transparent 20px,
+    transparent 40px
+  );
+  margin: 8px 0;
 }
 .power-supply {
   height: 100%;
