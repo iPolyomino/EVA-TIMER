@@ -1,5 +1,11 @@
-let time = 1 * 60 * 1000;
-let start = Date.now();
+const time = 12 * 60 * 1000;
+let remainingTime = time;
+let startTime = null;
+let timerId = null;
+
+const startButton = document.getElementById("start-button");
+const stopButton = document.getElementById("stop-button");
+const resetButton = document.getElementById("reset-button");
 
 const updateTimeText = time => {
   let m = Math.floor(time / (1000 * 60));
@@ -22,13 +28,44 @@ const setTimer = (m, s, ms) => {
 const update = () => {
   timerId = setTimeout(() => {
     const now = Date.now();
-    let diff = time - (now - start);
-    if (diff > 0) {
-      updateTimeText(diff);
+    remainingTime -= now - startTime;
+    startTime = now;
+    if (remainingTime > 0) {
       update();
     } else {
-      updateTimeText(0);
+      remainingTime = 0;
     }
+    updateTimeText(remainingTime);
   }, 10);
 };
-update();
+
+const startAction = button => {
+  if (timerId !== null) return;
+
+  startTime = Date.now();
+  update();
+  startButton.classList.remove("active-control");
+  stopButton.classList.add("active-control");
+};
+
+const stopAction = () => {
+  if (timerId === null) return;
+
+  clearTimeout(timerId);
+  timerId = null;
+  stopButton.classList.remove("active-control");
+  startButton.classList.add("active-control");
+};
+
+const resetAction = () => {
+  remainingTime = time;
+  updateTimeText(remainingTime);
+};
+
+(() => {
+  startButton.addEventListener("click", startAction);
+  stopButton.addEventListener("click", stopAction);
+  resetButton.addEventListener("click", resetAction);
+
+  updateTimeText(time);
+})();

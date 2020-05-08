@@ -132,9 +132,9 @@ button {
 .control button > span:nth-child(2) {
   margin: 8px;
 }
-.control button:hover > span:nth-child(2) {
+.control button.active-control:hover > span:nth-child(2) {
   background-color: hsla(360, 100%, 50%, 0.5);
 }
-.active-control {
+.active-control > span:nth-child(2) {
   background-color: hsla(360, 100%, 50%, 1);
 }
