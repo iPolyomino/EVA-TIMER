@@ -17,30 +17,19 @@ button {
   text-justify: distribute;
   letter-spacing: -0.1em;
 }
-.wrap {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: 100vh;
-  background-color: red;
-}
+
 .timer {
-  height: 80vh;
-  color: red;
-  background-color: black;
   display: grid;
-  grid-template-columns: 200px 1fr 400px;
-  grid-template-rows: 60px 1fr 8rem;
+  height: 100vh;
+  grid-template-columns: 200px 200px 1fr 400px 200px;
+  grid-template-rows: 100px 60px 1fr 8rem 100px;
   font-family: "Open Sans", sans-serif, "Sawarabi Mincho";
 }
 .limit-info {
-  background-color: black;
-  color: red;
   font-size: 4rem;
-  grid-column-start: 1;
-  grid-column-end: 4;
-  margin: 8px;
+  grid-column-start: 2;
+  grid-column-end: 5;
+  grid-row-start: 2;
 }
 .active-time-remaining {
   font-size: 1.5rem;
@@ -51,11 +40,11 @@ button {
   font-size: 3rem;
   text-align: right;
   grid-column-start: 1;
-  grid-row-start: 2;
-  grid-row-end: 4;
+  grid-column-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 6;
 }
 .remain > span:last-child {
-  background-color: red;
   height: 100%;
 }
 .time {
@@ -63,6 +52,8 @@ button {
   flex-direction: row;
   align-items: flex-end;
   font-family: "7segment";
+  grid-column-start: 3;
+  grid-row-start: 3;
 }
 .minute-second-area {
   font-size: 20rem;
@@ -75,6 +66,8 @@ button {
   display: grid;
   grid-template-rows: 2fr 1fr 2fr;
   align-items: center;
+  grid-column-start: 4;
+  grid-row-start: 3;
 }
 .deactive div {
   display: flex;
@@ -137,7 +130,9 @@ button {
   flex-direction: row;
   grid-template-columns: repeat(4, 1fr);
   column-gap: 8px;
-  background-color: transparent;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 4;
 }
 .control button {
   display: grid;

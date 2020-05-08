@@ -7,67 +7,63 @@
     <link rel="stylesheet" type="text/css" href="index.css" />
   </head>
   <body>
-    <div class="wrap">
-      <div class="timer">
-        <div class="limit-info">
-          <span>活動限界まで</span>
-          <span class="active-time-remaining">ACTIVE TIME REMAINING</span>
+    <div class="timer">
+      <div class="limit-info">
+        <span>活動限界まで</span>
+        <span class="active-time-remaining">ACTIVE TIME REMAINING</span>
+      </div>
+      <div class="remain">
+        <span>あと</span>
+      </div>
+      <div class="time">
+        <div class="minute-second-area">
+          <span id="minute">00</span>:<span id="second">00</span>
         </div>
-        <div class="remain">
-          <span>あと</span>
+        <div class="millisecond-area">:<span id="millisecond">00</span></div>
+      </div>
+      <div class="deactive">
+        <div>
+          <p>
+            <button class="power-system">
+              <span>内部</span>
+              <span>I N T E R N A L</span>
+              <span></span>
+            </button>
+          </p>
+        </div>
+        <div>
+          <p class="power-supply">
+            <span>主電源供給システム</span>
+            <span>MAIN ENERGY SUPPLY SYSTEM</span>
+          </p>
+        </div>
+        <div>
+          <p>
+            <button class="power-system">
+              <span>外部</span>
+              <span>E X T E R N A L</span>
+              <span></span>
+            </button>
+          </p>
+        </div>
+      </div>
+      <div class="control">
+        <button id="start-button" class="active-control">
+          <span> S T A R T </span>
           <span></span>
-        </div>
-        <div class="time">
-          <div class="minute-second-area">
-            <span id="minute">00</span>:<span id="second">00</span>
-          </div>
-          <div class="millisecond-area">:<span id="millisecond">00</span></div>
-        </div>
-        <div class="deactive">
-          <div>
-            <p>
-              <button class="power-system">
-                <span>内部</span>
-                <span>I N T E R N A L</span>
-                <span></span>
-              </button>
-            </p>
-          </div>
-          <div>
-            <p class="power-supply">
-              <span>主電源供給システム</span>
-              <span>MAIN ENERGY SUPPLY SYSTEM</span>
-            </p>
-          </div>
-          <div>
-            <p>
-              <button class="power-system">
-                <span>外部</span>
-                <span>E X T E R N A L</span>
-                <span></span>
-              </button>
-            </p>
-          </div>
-        </div>
-        <div class="control">
-          <button id="start-button" class="active-control">
-            <span> S T A R T </span>
-            <span></span>
-          </button>
-          <button id="stop-button">
-            <span>S T O P</span>
-            <span></span>
-          </button>
-          <button id="reset-button" class="active-control">
-            <span>R E S E T</span>
-            <span></span>
-          </button>
-          <button>
-            <span></span>
-            <span></span>
-          </button>
-        </div>
-        <div></div>
+        </button>
+        <button id="stop-button">
+          <span>S T O P</span>
+          <span></span>
+        </button>
+        <button id="reset-button" class="active-control">
+          <span>R E S E T</span>
+          <span></span>
+        </button>
+        <button>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </div>
     <script src="index.js"></script>
