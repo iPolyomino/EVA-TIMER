@@ -69,12 +69,12 @@ button {
   grid-column-end: 3;
   grid-row-start: 3;
   grid-row-end: 7;
+  overflow: hidden;
 }
 .remain span:nth-child(1) {
   grid-column-start: 2;
 }
 .remain span:nth-child(2) {
-  width: 200px;
   margin-top: 8px;
   transform: skewY(-70deg);
   transform-origin: 100% 0;
