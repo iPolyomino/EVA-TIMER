@@ -2,7 +2,10 @@ const time = 12 * 60 * 1000;
 let remainingTime = time;
 let startTime = null;
 let timerId = null;
+let isCountdownTimer = true;
 
+const internalButton = document.getElementById("internal-button");
+const externalButton = document.getElementById("external-button");
 const startButton = document.getElementById("start-button");
 const stopButton = document.getElementById("stop-button");
 const resetButton = document.getElementById("reset-button");
@@ -28,7 +31,11 @@ const setTimer = (m, s, ms) => {
 const update = () => {
   timerId = setTimeout(() => {
     const now = Date.now();
-    remainingTime -= now - startTime;
+    if (isCountdownTimer) {
+      remainingTime -= now - startTime;
+    } else {
+      remainingTime += now - startTime;
+    }
     startTime = now;
     if (remainingTime > 0) {
       update();
@@ -39,7 +46,21 @@ const update = () => {
   }, 10);
 };
 
-const startAction = button => {
+const internalAction = () => {
+  isCountdownTimer = true;
+  resetAction();
+  internalButton.classList.remove("disabled");
+  externalButton.classList.add("disabled");
+};
+
+const externalAction = () => {
+  isCountdownTimer = false;
+  resetAction();
+  externalButton.classList.remove("disabled");
+  internalButton.classList.add("disabled");
+};
+
+const startAction = () => {
   if (timerId !== null) return;
 
   startTime = Date.now();
@@ -58,11 +79,17 @@ const stopAction = () => {
 };
 
 const resetAction = () => {
-  remainingTime = time;
+  if (isCountdownTimer) {
+    remainingTime = time;
+  } else {
+    remainingTime = 0;
+  }
   updateTimeText(remainingTime);
 };
 
 (() => {
+  internalButton.addEventListener("click", internalAction);
+  externalButton.addEventListener("click", externalAction);
   startButton.addEventListener("click", startAction);
   stopButton.addEventListener("click", stopAction);
   resetButton.addEventListener("click", resetAction);

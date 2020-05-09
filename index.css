@@ -127,7 +127,10 @@ button {
   box-sizing: border-box;
   padding: 8px;
 }
-.energy-item:disabled {
+button.energy-item {
+  cursor: pointer;
+}
+button.disabled {
   color: hsla(360, 100%, 50%, 0.5);
 }
 .power-system {
@@ -156,7 +159,7 @@ button {
     transparent 40px
   );
 }
-.energy-item:disabled .power-system div:nth-child(3) {
+button.disabled .power-system div:nth-child(3) {
   grid-row-start: 1;
   grid-row-end: 3;
   background: repeating-linear-gradient(
