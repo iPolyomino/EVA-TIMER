@@ -2,6 +2,8 @@
 
 timer
 
+![screenshot](./screenshot.png)
+
 # Authors
 
 [Hagi](https://github.com/iPolyomino)
