@@ -8,7 +8,7 @@ const stopButton = document.getElementById("stop-button");
 const resetButton = document.getElementById("reset-button");
 
 const updateTimeText = time => {
-  let m = Math.floor(time / (1000 * 60));
+  let m = Math.floor(time / (1000 * 60)) % 100;
   let s = Math.floor((time % (1000 * 60)) / 1000);
   let ms = time % 1000;
 
