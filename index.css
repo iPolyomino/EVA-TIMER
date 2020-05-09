@@ -74,22 +74,16 @@ button {
   grid-column-start: 2;
 }
 .remain span:nth-child(2) {
-  transform: skewX(-29.5deg);
   width: 200px;
+  margin-top: 8px;
+  transform: skewY(-70deg);
+  transform-origin: 100% 0;
   background-color: black;
   grid-column-start: 1;
   grid-row-start: 2;
-  grid-row-end: 6;
+  grid-row-end: 4;
 }
 .remain span:nth-child(3) {
-  transform: skewX(-45deg);
-  width: 200px;
-  background-color: black;
-  grid-column-start: 1;
-  grid-row-start: 3;
-  grid-row-end: 6;
-}
-.remain span:nth-child(4) {
   grid-column-start: 2;
   grid-row-start: 2;
   grid-row-end: 4;
@@ -98,7 +92,7 @@ button {
   border-right: 8px solid red;
   z-index: 999;
 }
-.remain span:nth-child(5) {
+.remain span:nth-child(4) {
   position: relative;
   grid-column-start: 1;
   grid-column-end: 3;
