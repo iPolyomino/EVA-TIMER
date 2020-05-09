@@ -20,10 +20,15 @@ button {
 
 .timer {
   display: grid;
+  background-color: red;
   height: 100vh;
   grid-template-columns: 200px 200px 1fr 400px 200px;
   grid-template-rows: 100px 60px 1fr 8rem 100px;
   font-family: "Open Sans", sans-serif, "Sawarabi Mincho";
+}
+.display-area {
+  background-color: black;
+  color: red;
 }
 .limit-info {
   font-size: 4rem;
@@ -49,26 +54,29 @@ button {
   grid-column-start: 2;
 }
 .remain span:nth-child(2) {
-  grid-column-start: 2;
-  grid-row-start: 2;
-  grid-row-end: 4;
-  background-color: black;
-}
-.remain span:nth-child(3) {
-  transform: skewX(-28deg);
+  transform: skewX(-29.5deg);
   width: 200px;
   background-color: black;
   grid-column-start: 1;
   grid-row-start: 2;
   grid-row-end: 6;
 }
-.remain span:nth-child(4) {
+.remain span:nth-child(3) {
   transform: skewX(-45deg);
   width: 200px;
   background-color: black;
   grid-column-start: 1;
   grid-row-start: 3;
   grid-row-end: 6;
+}
+.remain span:nth-child(4) {
+  grid-column-start: 2;
+  grid-row-start: 2;
+  grid-row-end: 4;
+  background-color: black;
+  border-top: 8px solid red;
+  border-right: 8px solid red;
+  z-index: 999;
 }
 .remain span:nth-child(5) {
   position: relative;
