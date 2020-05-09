@@ -92,14 +92,6 @@ button {
   border-right: 8px solid red;
 }
 .remain span:nth-child(4) {
-  transform: skewY(-45deg);
-  transform-origin: 100% 0;
-  background-color: red;
-  grid-column-start: 1;
-  grid-row-start: 4;
-  grid-row-end: 6;
-}
-.remain span:nth-child(5) {
   position: relative;
   grid-column-start: 1;
   grid-column-end: 3;
