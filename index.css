@@ -114,18 +114,21 @@ button {
 .millisecond-area {
   font-size: 16rem;
 }
-.deactive {
+.energy {
   display: grid;
   grid-template-rows: 2fr 1fr 2fr;
   align-items: center;
   grid-column-start: 4;
   grid-row-start: 3;
 }
-.deactive-item {
+.energy-item {
   width: 100%;
   height: 100%;
   box-sizing: border-box;
   padding: 8px;
+}
+.energy-item:disabled {
+  color: hsla(360, 100%, 50%, 0.5);
 }
 .power-system {
   height: 100%;
@@ -149,6 +152,17 @@ button {
     -45deg,
     red,
     red 20px,
+    transparent 20px,
+    transparent 40px
+  );
+}
+.energy-item:disabled .power-system div:nth-child(3) {
+  grid-row-start: 1;
+  grid-row-end: 3;
+  background: repeating-linear-gradient(
+    -45deg,
+    hsla(360, 100%, 50%, 0.5),
+    hsla(360, 100%, 50%, 0.5) 20px,
     transparent 20px,
     transparent 40px
   );
