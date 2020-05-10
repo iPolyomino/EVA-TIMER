@@ -1,14 +1,16 @@
-const time = 12 * 60 * 1000;
-let remainingTime = time;
+let time = 5 * 60 * 1000;
+let remainingTime = null;
 let startTime = null;
 let timerId = null;
 let isCountdownTimer = true;
+const maxMinutes = 100;
 
 const internalButton = document.getElementById("internal-button");
 const externalButton = document.getElementById("external-button");
 const startButton = document.getElementById("start-button");
 const stopButton = document.getElementById("stop-button");
 const resetButton = document.getElementById("reset-button");
+const setupButton = document.getElementById("setup-button");
 
 const updateTimeText = time => {
   let m = Math.floor(time / (1000 * 60)) % 100;
@@ -51,6 +53,7 @@ const internalAction = () => {
   resetAction();
   internalButton.classList.remove("disabled");
   externalButton.classList.add("disabled");
+  setupButton.classList.add("active-control");
 };
 
 const externalAction = () => {
@@ -58,6 +61,7 @@ const externalAction = () => {
   resetAction();
   externalButton.classList.remove("disabled");
   internalButton.classList.add("disabled");
+  setupButton.classList.remove("active-control");
 };
 
 const startAction = () => {
@@ -87,12 +91,36 @@ const resetAction = () => {
   updateTimeText(remainingTime);
 };
 
+const setupAction = () => {
+  if (!isCountdownTimer) return;
+
+  time += 1 * 60 * 1000;
+  time %= maxMinutes * 60 * 1000;
+
+  resetAction();
+};
+
 (() => {
   internalButton.addEventListener("click", internalAction);
   externalButton.addEventListener("click", externalAction);
   startButton.addEventListener("click", startAction);
   stopButton.addEventListener("click", stopAction);
   resetButton.addEventListener("click", resetAction);
+  setupButton.addEventListener("click", setupAction);
 
-  updateTimeText(time);
+  const isNumber = value => typeof value === "number" && isFinite(value);
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const timeParam = parseFloat(urlParams.get("time"), 10);
+  if (isNumber(timeParam) && 0 <= timeParam && timeParam < maxMinutes) {
+    time = timeParam * 60 * 1000;
+  }
+
+  const isStopwatch = urlParams.get("stopwatch");
+  console.log(isStopwatch);
+  if (isStopwatch !== null) {
+    externalAction();
+  }
+
+  resetAction();
 })();
