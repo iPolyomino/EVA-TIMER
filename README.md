@@ -8,10 +8,10 @@ timer
 
 You can set up the timer with the URL query parameter.
 
-|   query   |           value            |
-| :-------: | :------------------------: |
-|   time    | remaining times of minutes |
-| stopwatch |        not required        |
+|   query   |           value           |
+| :-------: | :-----------------------: |
+|   time    | remaining time of minutes |
+| stopwatch |       not required        |
 
 ### Example
 
