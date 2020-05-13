@@ -10,7 +10,7 @@ button {
   color: red;
   background-color: transparent;
   border: none;
-  font-family: "Open Sans", sans-serif, "Sawarabi Mincho";
+  font-family: "Open Sans", "Sawarabi Mincho";
   display: inline-block;
   text-align: justify;
   text-align-last: justify;
@@ -24,7 +24,7 @@ button {
   height: 100vh;
   grid-template-columns: 200px 200px 1fr 400px 200px;
   grid-template-rows: 100px 60px 1fr 8rem 100px;
-  font-family: "Open Sans", sans-serif, "Sawarabi Mincho";
+  font-family: "Open Sans", "Sawarabi Mincho";
 }
 .display-area {
   background-color: black;
