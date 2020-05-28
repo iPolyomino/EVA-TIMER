@@ -12,7 +12,7 @@ const stopButton = document.getElementById("stop-button");
 const resetButton = document.getElementById("reset-button");
 const setupButton = document.getElementById("setup-button");
 
-const updateTimeText = time => {
+const updateTimeText = (time) => {
   let m = Math.floor(time / (1000 * 60)) % 100;
   let s = Math.floor((time % (1000 * 60)) / 1000);
   let ms = time % 1000;
@@ -108,7 +108,7 @@ const setupAction = () => {
   resetButton.addEventListener("click", resetAction);
   setupButton.addEventListener("click", setupAction);
 
-  const isNumber = value => typeof value === "number" && isFinite(value);
+  const isNumber = (value) => typeof value === "number" && isFinite(value);
 
   const urlParams = new URLSearchParams(window.location.search);
   const timeParam = parseFloat(urlParams.get("time"), 10);
@@ -117,7 +117,6 @@ const setupAction = () => {
   }
 
   const isStopwatch = urlParams.get("stopwatch");
-  console.log(isStopwatch);
   if (isStopwatch !== null) {
     externalAction();
   }

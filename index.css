@@ -21,7 +21,7 @@ button {
 .timer {
   display: grid;
   background-color: red;
-  height: 100vh;
+  min-height: 100vh;
   grid-template-columns: 200px 200px 1fr 400px 200px;
   grid-template-rows: 100px 60px 1fr 8rem 100px;
   font-family: "Open Sans", "Sawarabi Mincho";
@@ -108,11 +108,10 @@ button {
   grid-row-start: 3;
 }
 .minute-second-area {
-  font-size: 20rem;
-  text-size-adjust: auto;
+  font-size: 16vw;
 }
 .millisecond-area {
-  font-size: 16rem;
+  font-size: 12vw;
 }
 .energy {
   display: grid;
