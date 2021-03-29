@@ -22,8 +22,8 @@ button {
   display: grid;
   background-color: red;
   min-height: 100vh;
-  grid-template-columns: 200px 200px 1fr 400px 200px;
-  grid-template-rows: 100px 60px 1fr 8rem 100px;
+  grid-template-columns: 1fr 1fr 50vw 25vw 1fr;
+  grid-template-rows: 1fr 4rem 60vh 15vh 10vh;
   font-family: "Open Sans", "Sawarabi Mincho";
 }
 .display-area {
@@ -32,9 +32,9 @@ button {
 }
 .limit-info {
   display: grid;
-  grid-template-columns: 400px 1fr;
+  grid-template-columns: 6.5em 1fr;
   grid-template-rows: repeat(2, 1fr);
-  font-size: 4rem;
+  font-size: 4vw;
   grid-column-start: 2;
   grid-column-end: 5;
   grid-row-start: 2;
@@ -57,13 +57,13 @@ button {
   border-left: 1rem solid black;
 }
 .active-time-remaining {
-  font-size: 1.5rem;
+  font-size: 1.5vw;
 }
 .remain {
   display: grid;
-  grid-template-columns: 200px 200px;
-  grid-template-rows: 3rem 2fr 1fr 8rem 100px;
-  font-size: 3rem;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 3rem 1fr 15vh 10vh;
+  font-size: 3vw;
   text-align: right;
   grid-column-start: 1;
   grid-column-end: 3;
@@ -81,27 +81,26 @@ button {
   background-color: black;
   grid-column-start: 1;
   grid-row-start: 2;
-  grid-row-end: 4;
+  grid-row-end: 3;
 }
 .remain span:nth-child(3) {
   grid-column-start: 2;
   grid-row-start: 2;
-  grid-row-end: 4;
+  grid-row-end: 3;
   background-color: black;
   border-top: 8px solid red;
   border-right: 8px solid red;
 }
 .remain span:nth-child(4) {
-  position: relative;
   grid-column-start: 1;
   grid-column-end: 3;
-  grid-row-start: 5;
-  border-top: 100px solid transparent;
-  border-right: 300px solid black;
+  grid-row-start: 4;
+  background-color:black;
+  transform-origin: 100% 0;
+  transform: skewY(-20deg);
 }
 .time {
   display: flex;
-  flex-direction: row;
   align-items: flex-end;
   font-family: "7segment";
   grid-column-start: 3;
@@ -109,6 +108,9 @@ button {
 }
 .minute-second-area {
   font-size: 16vw;
+  flex-shrink: 0;
+  flex-grow: 1;
+  text-align: center
 }
 .millisecond-area {
   font-size: 12vw;
@@ -145,7 +147,8 @@ button.disabled {
   font-size: 5rem;
 }
 .power-system div:nth-child(2) {
-  font-size: 2rem;
+  margin: 0 16px;
+  font-size: 2vw;
 }
 .power-system div:nth-child(3) {
   grid-row-start: 1;
@@ -175,15 +178,15 @@ button.disabled .power-system div:nth-child(3) {
   grid-template-rows: 2fr 1fr;
   align-items: center;
   border: 4px solid;
-  letter-spacing: 4px;
-}
-.power-supply div {
-  margin: 0 8px;
-  text-justify: distribute;
-  text-align-last: justify;
 }
 .power-supply div:nth-child(1) {
   font-size: 2rem;
+}
+.power-supply div {
+  margin: 0 8px;
+  white-space: nowrap;
+  text-justify: distribute;
+  text-align-last: justify;
 }
 .control {
   display: grid;
@@ -197,14 +200,13 @@ button.disabled .power-system div:nth-child(3) {
   display: grid;
   grid-template-rows: repeat(2, 1fr);
   margin: 8px;
-  font-size: 2rem;
+  font-size: 2vw;
   border: 4px solid;
   color: red;
   cursor: pointer;
 }
 .control button > div:nth-child(2) {
   margin: 8px;
-  height: 2rem;
 }
 .control button.active-control:hover > div:nth-child(2) {
   background-color: hsla(360, 100%, 50%, 0.5);
