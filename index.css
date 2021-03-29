@@ -34,7 +34,7 @@ button {
   display: grid;
   grid-template-columns: 6.5em 1fr;
   grid-template-rows: repeat(2, 1fr);
-  font-size: 4vw;
+  font-size: 4rem;
   grid-column-start: 2;
   grid-column-end: 5;
   grid-row-start: 2;
@@ -57,13 +57,13 @@ button {
   border-left: 1rem solid black;
 }
 .active-time-remaining {
-  font-size: 1.5vw;
+  font-size: 2rem;
 }
 .remain {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 3rem 1fr 15vh 10vh;
-  font-size: 3vw;
+  font-size: 3rem;
   text-align: right;
   grid-column-start: 1;
   grid-column-end: 3;
