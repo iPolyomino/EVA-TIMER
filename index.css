@@ -95,7 +95,7 @@ button {
   grid-column-start: 1;
   grid-column-end: 3;
   grid-row-start: 4;
-  background-color:black;
+  background-color: black;
   transform-origin: 100% 0;
   transform: skewY(-20deg);
 }
@@ -110,7 +110,7 @@ button {
   font-size: 16vw;
   flex-shrink: 0;
   flex-grow: 1;
-  text-align: center
+  text-align: center;
 }
 .millisecond-area {
   font-size: 12vw;
@@ -208,6 +208,7 @@ button.disabled .power-system div:nth-child(3) {
 }
 .control button > div:nth-child(2) {
   margin: 8px;
+  height: 2rem;
 }
 .control button.active-control:hover > div:nth-child(2) {
   background-color: hsla(360, 100%, 50%, 0.5);
